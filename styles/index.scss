@@ -1,0 +1,1151 @@
+#container {
+    /* Desktop - 1 */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    //position: fixed;
+    //width: 1440px;
+    //height: 3995px;
+
+    background-image: url(/assets/The-Incredible-Beauty-of-Salt-Desert-Transformed-Into-Gigantic-Mirror-15-1782704763.jpg);
+    background-size: cover;
+
+    .header {
+        /* Header */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 10px;
+
+        font-family: 'Impact';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 39px;
+
+        /* identical to box height */
+
+        color: #3974AA;
+
+        width: 347px;
+        height: 39px;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        
+    }
+    .sessao-desenho{
+        /* Sessão Desenho */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 8px;
+
+        width: 1144px;
+        height: 458px;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        .titulo{
+            /* subtitulo */
+
+            width: 210px;
+            height: 28px;
+
+            font-family: 'Comic Sans MS';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+
+            /* identical to box height */
+
+            color: #000000;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+        .sessao-desenhos-digitais{
+            /* Sessão Desenho Digital */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 9px;
+
+            width: 1144px;
+            height: 207px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            .subtitulo{
+                /* no digital: */
+
+                width: 82px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-desenhos{
+                /* Coluna Desenhos */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 75px;
+
+                width: 1053px;
+                height: 207px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .desenho1{
+                    /* desenho 1 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/[2023-01-10].png);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .desenho2{
+                    /* desenho 2 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/1486516_andreanimator_lilith.png);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+                .desenho3{
+                    /* desenho 3 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/iu_345792_8259593.png);
+                    background-size: 100%;
+                    background-position-y: 80%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 2;
+                    flex-grow: 0;
+                }
+                .desenho4{
+                    /* desenho 4 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/1921593_andreanimator_helvetica-standard-bunny.png);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 3;
+                    flex-grow: 0;
+                }
+            }
+        }
+        .sessao-desenhos-tradicionais{
+            /* Sessão Desenho Digital */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 9px;
+
+            width: 1144px;
+            height: 207px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            .subtitulo{
+                /* no digital: */
+
+                width: 82px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-desenhos{
+                /* Coluna Desenhos */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 75px;
+
+                width: 1053px;
+                height: 207px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .desenho1{
+                    /* desenho 1 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/Ea0c4LUWoAES45r.jpg);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .desenho2{
+                    /* desenho 2 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/FbdcTeUWYAQZdsi.jpg);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+                .desenho3{
+                    /* desenho 3 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/FJ6fnAfXIAAHN0u.jpg);
+                    background-size: 100%;
+                    background-position-y: 80%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 2;
+                    flex-grow: 0;
+                }
+                .desenho4{
+                    /* desenho 4 */
+
+                    box-sizing: border-box;
+
+                    width: 207px;
+                    height: 207px;
+
+                    background-image: url(/assets/FZrPRCgWIAADwPN.jpg);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 3;
+                    flex-grow: 0;
+                }
+            }
+        }
+    }
+    #sessao-musica{
+        /* Sessão Musica */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+
+        height: 523px;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        .titulo{
+            /* subtitulo */
+
+            width: 244px;
+            height: 28px;
+
+            font-family: 'Comic Sans MS';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+
+            /* identical to box height */
+
+            color: #000000;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+        .sessao-musicas-digitais{
+            /* Sessão Exemplos Musicas */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 9px;
+
+            width: 580px;
+            height: 207px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            .subtitulo{
+                /* no digital: */
+
+                width: 82px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-musicas{
+                /* Linha Musicas */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 63px;
+
+                width: 489px;
+                height: 207px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .musica1{
+                    /* album 1 */
+
+                    box-sizing: border-box;
+
+                    height: 207px;
+
+                    background: #D9D9D9;
+                    border: 2px solid #3974AA;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .musica2{
+                    /* album 1 */
+
+                    box-sizing: border-box;
+
+                    height: 207px;
+
+                    background: #D9D9D9;
+                    border: 2px solid #3974AA;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+            }
+        }
+    }
+    #sessao-websites{
+        /* Sessão WEBSITES */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+
+        width: 1440px;
+        height: 1145px;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 3;
+        flex-grow: 0;
+        .titulo{
+            /* subtitulo */
+
+            width: 646px;
+            height: 28px;
+
+            font-family: 'Comic Sans MS';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+
+            /* identical to box height */
+
+            color: #000000;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+        .sessao-sites-integrador{
+            /* Sites Apresentaveis */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px;
+
+            width: 1440px;
+            height: 519px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            .subtitulo{
+                /* os dois únicos exemplos q eu tenho dos dois projetos integrador */
+
+                width: 539px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-sites{
+                /* Linha Sites */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 20px;
+
+                width: 1440px;
+                height: 488px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .site1{
+                    /* site 1 */
+
+                    box-sizing: border-box;
+
+                    width: 710px;
+                    height: 488px;
+
+                    background-image: url(/assets/firefox_9FDDuEaFr1.png);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .site2{
+                    /* site 2 */
+
+                    box-sizing: border-box;
+
+                    width: 710px;
+                    height: 488px;
+
+                    background-image: url(/assets/firefox_bkfQgBTusJ.png);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+            }
+        }
+        .sessao-site{
+            /* Sessão Site Antigo */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px;
+
+            width: 1440px;
+            height: 550px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            .subtitulo{
+                /* descricao */
+
+                width: 418.64px;
+                height: 62px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-sites{
+                .site1{
+                    /* site 3 */
+
+                    box-sizing: border-box;
+
+                    width: 870.94px;
+                    height: 488px;
+
+                    background-image: url(/assets/firefox_8f4pZtYzqh.png);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+            }
+        }
+    }
+    #sessao-jogos{
+        /* Sessão JOGOS */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+
+        width: 1440px;
+        height: 1280px;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 4;
+        flex-grow: 0;
+        .titulo{
+            /* subtitulo */
+
+            width: 1440px;
+            height: 28px;
+
+            font-family: 'Comic Sans MS';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+
+            /* identical to box height */
+
+            color: #000000;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+        .sessao-jogos-mostraveis{
+            /* Jogos Exemplos */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0px;
+
+            width: 1052px;
+            height: 519px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            .subtitulo{
+                /* os dois únicos exemplos q são mostraveis (eu tinha gifs melhores mas eu perdi eles)): */
+
+                width: 1440px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-jogos{
+                /* Linha Jogos Exemplos */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 76px;
+
+                width: 1052px;
+                height: 488px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .jogo1{
+                    /* jogo 1 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-color: #000000;
+                    background-image: url(/assets/froggyImgur.gif);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .jogo2{
+                    /* jogo 2 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-color: #000000;
+                    background-image: url(/assets/metroidvania-Imgur.gif);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border: 2px solid #3974AA;
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+            }
+
+        }
+        .sessao-jogos-tentando{
+            /* Jogos Exemplos */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0px;
+
+            width: 1052px;
+            height: 519px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            .subtitulo{
+                /* os dois únicos exemplos q são mostraveis (eu tinha gifs melhores mas eu perdi eles)): */
+
+                width: 1440px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-jogos{
+                /* Linha Jogos Exemplos */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 76px;
+
+                width: 1052px;
+                height: 488px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .jogo1{
+                    /* jogo 3 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-color: #000000;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .jogo2{
+                    /* jogo 2 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-color: #000000;
+                    background-image: url(/assets/jogoCarro.gif);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border: 2px solid #3974AA;
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+
+            }
+        }
+
+    }
+    #sessao-aleatoriedades{
+        /* Sessão JOGOS */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+
+        width: 1440px;
+        height: 1280px;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 4;
+        flex-grow: 0;
+        .titulo{
+            /* subtitulo */
+
+            width: 1440px;
+            height: 28px;
+
+            font-family: 'Comic Sans MS';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+
+            /* identical to box height */
+
+            color: #000000;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+        .sessao-videos{
+            /* Jogos Exemplos */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0px;
+
+            width: 1052px;
+            height: 519px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            .subtitulo{
+                /* os dois únicos exemplos q são mostraveis (eu tinha gifs melhores mas eu perdi eles)): */
+
+                width: 1440px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-videos{
+                /* Linha Jogos Exemplos */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 76px;
+
+                width: 1052px;
+                height: 488px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .video1{
+                    /* jogo 1 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-color: #000000;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .video2{
+                    /* jogo 2 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-color: #000000;
+                    border: 2px solid #3974AA;
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+            }
+
+        }
+        .sessao-imagens{
+            /* Jogos Exemplos */
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0px;
+
+            width: 1052px;
+            height: 519px;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            .subtitulo{
+                /* os dois únicos exemplos q são mostraveis (eu tinha gifs melhores mas eu perdi eles)): */
+
+                width: 1440px;
+                height: 31px;
+
+                font-family: 'Papyrus';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 31px;
+
+                color: #000000;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .linha-imagens{
+                /* Linha Jogos Exemplos */
+
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 76px;
+
+                width: 1052px;
+                height: 488px;
+
+
+                /* Inside auto layout */
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                .imagem1{
+                    /* jogo 3 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-image: url(/assets/firefox_AqRfhmzUdL.png);
+                    background-size: 100%;
+                    border: 2px solid #3974AA;
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+                .imagem2{
+                    /* jogo 2 */
+
+                    box-sizing: border-box;
+
+                    width: 488px;
+                    height: 488px;
+
+                    background-image: url(/assets/iu_270120_8259593.jpg);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border: 2px solid #3974AA;
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    border-radius: 25px;
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                }
+
+            }
+        }
+
+    }
+}
