@@ -1,7 +1,24 @@
 {
-    "version": "0.1.0",
+    "version": "2.0.0",
     "command": "sass",
-    "isShellCommand": true,
-    "args": ["--watch", "."],
-    "showOutput": "always"
+    "args": [
+        "--watch",
+        "."
+    ],
+    "tasks": [
+        {
+            "label": "sass",
+            "type": "shell",
+            "command": "sass",
+            "args": [
+                "--watch",
+                "."
+            ],
+            "problemMatcher": [],
+            "group": {
+                "_id": "build",
+                "isDefault": false
+            }
+        }
+    ]
 }
