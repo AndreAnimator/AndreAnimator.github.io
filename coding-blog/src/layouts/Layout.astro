@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro"
 import '../styles/global.css' 
 
@@ -23,6 +24,7 @@ const { title, description = "Coding blog and portfolio.", image = "/src/content
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:image" content={image} />
 		<title>{title}</title>
+		<ClientRouter></ClientRouter>
 	</head>
 	<body class="min-h-screen">
 		<Header />
