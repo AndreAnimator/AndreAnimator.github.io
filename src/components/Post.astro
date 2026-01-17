@@ -11,7 +11,7 @@ console.log(post.data.image)
 ---
 
 <article>
-    <a href={`/blog/${post.slug}`}>
+    <a href={`/blog/${post.id}`}>
         <Image
             src={post.data.image}
             width={600}
@@ -21,7 +21,7 @@ console.log(post.data.image)
         />
     </a>
     <a
-        href={`/blog/${post.slug}`}
+        href={`/blog/${post.id}`}
         class="text-4xl text-zinc-900 font-semibold inline-block"
     >
         <h2>{post.data.title}</h2>
