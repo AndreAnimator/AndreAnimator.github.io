@@ -1,0 +1,29 @@
+---
+import H1 from '../components/H1.astro';
+import Main from '../components/Main.astro';
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "André",
+  country: "Brazil",
+  occupation: "Developer",
+  hobbies: ["art", "music", "games"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+---
+
+<Layout title={pageTitle}>
+	<Main>
+		<H1 text={pageTitle}/>
+        <p>Hi I'm {identity.firstName}!! Pleased to meet ya.</p>
+
+	<Main>
+    <p>Some skills of mine are:</p>
+    <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+</Layout>

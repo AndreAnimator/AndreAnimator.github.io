@@ -26,6 +26,11 @@ console.log(post.data.image)
     >
         <h2>{post.data.title}</h2>
     </a>
+    <div class="tags">
+        {post.data.categories.map((tag: string) => (
+        <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+    </div>
     <p class="text-zinc-500 text-2xl line-clamp-2">
         {post.body}
     </p>

@@ -34,6 +34,11 @@ const {Content} = await render(post);
 <Layout title={post.data.title}>
     <Main>
         <H1 text={post.data.title}></H1>
+        <div class="tags">
+            {post.data.categories.map((tag: string) => (
+            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+            ))}
+        </div>
         <Image
             src={post.data.image}
             width={1024}
