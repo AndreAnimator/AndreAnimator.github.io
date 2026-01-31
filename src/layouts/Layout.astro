@@ -3,6 +3,7 @@ import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro"
 import '../styles/global.css' 
 import Footer from "../components/Footer.astro";
+import ThemeHeadScript from "../components/theme-head-script.astro";
 
 interface Props{
 	title: string;
@@ -26,8 +27,9 @@ const { title, description = "Coding blog and portfolio.", image = "/src/content
 		<meta property="og:image" content={image} />
 		<title>{title}</title>
 		<ClientRouter></ClientRouter>
+		<ThemeHeadScript />
 	</head>
-	<body class="min-h-screen">
+	<body class="min-h-screen bg-white dark:bg-gray-800">
 		<Header />
 		<slot />
 		<Footer />
