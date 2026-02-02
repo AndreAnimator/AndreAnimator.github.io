@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Post from '../../../components/Post.astro';
+import Layout from '../../../layouts/Layout.astro';
+import H1 from '../../../components/H1.astro';
+import PostList from '../../../components/PostList.astro';
+import Main from '../../../components/Main.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+/*
+    const lang = getLangFromUrl(Astro.url);
+    const allPosts = await getCollection("posts", ({ id }) => {
+        return id.startsWith(lang);
+    });
+*/
+    const allPosts = await getCollection("posts");
+
+    const uniqueTags = [...new Set(allPosts.map((post: any) => post.data.categories).flat())];
+
+    return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post: any) => post.data.categories.includes(tag));
+    return {
+        params: { tag },
+        props: { posts: filteredPosts },
+    };
+    });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout title={tag}>
+    <Main>
+        <H1 text=`Postagens com a tag ${tag}`/>
+        {posts.map(post => (
+            <PostList posts={posts}/>
+        ))}
+    </Main>
+</Layout>

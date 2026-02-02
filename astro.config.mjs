@@ -15,4 +15,11 @@ export default defineConfig({
 
   integrations: [mdx(), vue()],
   site: 'https://andreanimator.github.io/',
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "pt-br"],
+    routing: {
+      prefixDefaultLocale: true, // Ensures that your default locale is prefixed aswell
+    },
+  },
 });
