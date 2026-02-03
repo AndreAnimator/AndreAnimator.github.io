@@ -9,11 +9,12 @@ type Props = {
 
 const { post } = Astro.props;
 console.log(post.data.image)
-const lang = getLangFromUrl(Astro.url);
+console.log(post.id)
+const [lang, ...slug] = post.id.split('/');
 ---
 
 <article>
-    <a href={`/blog/${post.id}`}>
+    <a href={`/${lang}/blog/${slug}`}>
         <Image
             src={post.data.image}
             width={600}
@@ -23,14 +24,14 @@ const lang = getLangFromUrl(Astro.url);
         />
     </a>
     <a
-        href={`/blog/${post.id}`}
+        href={`/${lang}/blog/${slug}`}
         class="text-4xl text-zinc-900 font-semibold inline-block"
     >
         <h2>{post.data.title}</h2>
     </a>
     <div class="tags">
         {post.data.categories.map((tag: string) => (
-        <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+        <p class="tag"><a href={`/${lang}/tags/${tag}`}>{tag}</a></p>
         ))}
     </div>
     <p class="text-zinc-500 text-2xl line-clamp-2">

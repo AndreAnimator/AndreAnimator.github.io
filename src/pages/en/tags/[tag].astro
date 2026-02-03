@@ -8,12 +8,14 @@ import Main from '../../../components/Main.astro';
 import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
-    // const lang = getLangFromUrl(Astro.url);
-    // const allPosts = await getCollection("posts", ({ id }) => {
-    //     return id.startsWith(lang);
-    // });
-
-    const allPosts = await getCollection("posts");
+    /*
+    console.log(Astro.url)
+    const lang = getLangFromUrl(Astro.url);
+    const allPosts = await getCollection("posts", ({ id }) => {
+        return id.startsWith(lang);
+    });
+    */
+   const allPosts = await getCollection("posts");
 
     const uniqueTags = [...new Set(allPosts.map((post: any) => post.data.categories).flat())];
 

@@ -6,15 +6,12 @@ import PostList from "../../components/PostList.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
-/*
 const lang = getLangFromUrl(Astro.url);
 
 const posts = await getCollection("posts", ({ id }) => {
         return id.startsWith(lang);
     });
-*/
 
-const posts = await getCollection("posts");
 ---
 
 <Layout title="Blog | Blog de Programação">

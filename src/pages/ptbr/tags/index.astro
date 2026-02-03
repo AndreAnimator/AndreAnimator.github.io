@@ -5,15 +5,12 @@ import Main from "../../../components/Main.astro";
 import H1 from "../../../components/H1.astro";
 import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
-/*
+
 const lang = getLangFromUrl(Astro.url);
 
 const allPosts = await getCollection("posts", ({ id }) => {
         return id.startsWith(lang);
     });
-*/
-
-const allPosts = await getCollection("posts");
 
 const tags = [...new Set(allPosts.map((post: any) => post.data.categories).flat())];
 
@@ -24,7 +21,7 @@ const tags = [...new Set(allPosts.map((post: any) => post.data.categories).flat(
         <H1 text="Tags do Blog de Programação"/>
         <div>
             {tags.map((tag) => (
-                <p><a href={`/tags/${tag}`}> {tag} </a></p>
+                <p><a href={`/ptbr/tags/${tag}`}> {tag} </a></p>
             ))}
         </div>
     </Main>

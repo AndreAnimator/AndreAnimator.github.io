@@ -9,11 +9,12 @@ import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
 /*
+    console.log(Astro.url)
     const lang = getLangFromUrl(Astro.url);
     const allPosts = await getCollection("posts", ({ id }) => {
         return id.startsWith(lang);
     });
-*/
+    */
     const allPosts = await getCollection("posts");
 
     const uniqueTags = [...new Set(allPosts.map((post: any) => post.data.categories).flat())];

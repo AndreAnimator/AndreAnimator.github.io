@@ -11,9 +11,11 @@ import { render } from 'astro:content';
 export const getStaticPaths = async () => {
     const posts = await getCollection("posts");
     const paths = posts.map(post => {
+        const [lang, ...slug] = post.id.split('/');
         return {
             params: {
-                slug: post.id
+                lang,
+                slug: slug.join('/') || undefined
             },
             props: {
                 post
