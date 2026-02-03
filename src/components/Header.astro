@@ -1,6 +1,11 @@
 ---
 import ThemeDropdown from "./theme-dropdown.astro"
 import ThemeHeadScript from "./theme-head-script.astro";
+import LanguagePicker from '../components/LanguagePicker.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header
@@ -17,9 +22,10 @@ import ThemeHeadScript from "./theme-head-script.astro";
         <p class="uppercase text-3xl text-zinc-900">blog</p>
     </a>
     <ul class="flex gap-x-8">
-        <li><a href="/" class="text-teal-900 font-bold">Home</a></li>
-        <li><a href="/about" class="text-teal-900 font-bold">About</a></li>
-        <li><a href="/blog" class="text-teal-900 font-bold">Blog</a></li>
+        <li><a href="/" class="text-teal-900 font-bold">{t('nav.home')}</a></li>
+        <li><a href={`/${lang}/about`} class="text-teal-900 font-bold">{t('nav.about')}</a></li>
+        <li><a href={`/${lang}/blog`} class="text-teal-900 font-bold">Blog</a></li>
         <li><ThemeDropdown name="theme"></ThemeDropdown></li>
+        <LanguagePicker></LanguagePicker>
     </ul>
 </header>

@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Main from "../../components/Main.astro";
+import H1 from "../../components/H1.astro";
+import PostList from "../../components/PostList.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+// const lang = getLangFromUrl(Astro.url);
+
+// const posts = await getCollection("posts", ({ id }) => {
+//         return id.startsWith(lang);
+//     });
+
+const posts = await getCollection("posts");
+---
+
+<Layout title="Blog | Coding Blog">
+    <Main>
+        <H1 text="Coding Blog"/>
+        <li><a href="/en/tags" class="text-teal-900 font-bold">Tags</a></li>
+        {posts.map(post => (
+            <PostList posts={posts}/>
+        ))}
+    </Main>
+</Layout>
