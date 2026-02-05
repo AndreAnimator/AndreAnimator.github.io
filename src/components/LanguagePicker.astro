@@ -1,9 +1,48 @@
 ---
 import { languages } from '../i18n/ui';
 import { getLangFromUrl } from '../i18n/utils';
+import blog  from "../data/blog.json";
 
-function getPath(){
+function getIndex(aux: string, lang: string){
+  var filteredObj = blog.find(function(item, i){
+    if(lang == 'en'){
+      if(item.en === aux){
+        return i;
+      }
+    }
+    else{
+      if(item.ptbr === aux){
+        return i;
+      }
+    }
+  });
+  return 0;
+}
+
+function getPath(lang_org: string){
   let lang = getLangFromUrl(Astro.url);
+  var url = Astro.url.pathname.split( '/' );
+  var title = '';
+  console.log(url)
+  console.log(blog[0].en)
+  if(url.length > 3 && (url[2] == 'blog' || url[2] == 'portfolio')){
+    var aux = url[3];
+    if(lang_org == 'en'){
+      var i = getIndex(aux, lang);
+      title = blog[i].en
+    }else{
+      var i = getIndex(aux, lang);
+      title = blog[i].ptbr
+    }
+    console.log("oiii");
+    var string = Astro.url.pathname;
+    console.log(string);
+    string = string.replace(`/${lang}/`, '');
+    console.log(string);
+    string = string.replace(`/${url[3]}`, `/${title}`);
+    console.log(string);
+    return string;
+  }
   return Astro.url.pathname.replace(`/${lang}/`, '');
 }
 
@@ -11,7 +50,7 @@ function getPath(){
 <ul>
   {Object.entries(languages).map(([lang, label]) => (
     <li>
-      <a href={`/${lang}/${getPath()}`}>{label}</a>
+      <a href={`/${lang}/${getPath(lang)}`}>{label}</a>
     </li>
   ))}
 </ul>

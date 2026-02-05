@@ -22,7 +22,7 @@ const t = useTranslations(lang);
         <p class="uppercase text-3xl text-zinc-900">blog</p>
     </a>
     <ul class="flex gap-x-8">
-        <li><a href="/" class="text-teal-900 font-bold">{t('nav.home')}</a></li>
+        <li><a href={`/${lang}/`} class="text-teal-900 font-bold">{t('nav.home')}</a></li>
         <li><a href={`/${lang}/about`} class="text-teal-900 font-bold">{t('nav.about')}</a></li>
         <li><a href={`/${lang}/blog`} class="text-teal-900 font-bold">Blog</a></li>
         <li><ThemeDropdown name="theme"></ThemeDropdown></li>
