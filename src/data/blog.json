@@ -2,5 +2,9 @@
     {
         "en": "hello.mdx",
         "ptbr": "ola.mdx"
+    },
+    {
+        "en": "stoicats.mdx",
+        "ptbr": "stoicatsbr.mdx"
     }
 ]

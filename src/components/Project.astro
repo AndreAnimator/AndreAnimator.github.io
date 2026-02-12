@@ -1,0 +1,43 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { getLangFromUrl } from "../i18n/utils";
+
+type Props = {
+    project: CollectionEntry<'projects'>;
+};
+
+const { project } = Astro.props;
+const [lang, ...slug] = project.id.split('/');
+---
+
+<article>
+    <a href={`/${lang}/portfolio/${slug}`}>
+        <Image
+            src={project.data.image}
+            width={600}
+            height={600 / 1.5}
+            alt={project.data.title}
+            class="rounded-2xl shadow-xl mb-4 aspect-thumbnail object-cover"
+        />
+    </a>
+    <a
+        href={`/${lang}/portfolio/${slug}`}
+        class="text-4xl text-zinc-900 font-semibold inline-block"
+    >
+        <h2>{project.data.title}</h2>
+    </a>
+    <div class="tags grid grid-cols-6">
+        {project.data.categories.map((tag: string) => (
+        <p class="tag"><a href={`/${lang}/project-tags/${tag}`}>{tag}</a></p>
+        ))}
+    </div>
+    <div class="urls grid grid-cols-3">
+        <a class="text-4xl text-zinc-900 font-semibold inline-block" href={`${project.data.docs}`}> DOCS </a>
+        <a class="text-4xl text-zinc-900 font-semibold inline-block" href={`${project.data.url}`}> URL </a>
+        <a class="text-4xl text-zinc-900 font-semibold inline-block" href={`${project.data.github}`}> GITHUB </a>
+    </div>
+    <p class="text-zinc-500 text-2xl line-clamp-2">
+        {project.body}
+    </p>
+</article>

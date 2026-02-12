@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Main from "../../components/Main.astro";
+import H1 from "../../components/H1.astro";
+import ProjectList from "../../components/ProjectList.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const projects = await getCollection("projects", ({ id }) => {
+        return id.startsWith(lang);
+    });
+
+---
+
+<Layout title="Portfólio | Projetos">
+    <Main>
+        <H1 text="Projetos do Portfólio"/>
+        <li><a href="/ptbr/project-tags" class="text-teal-900 font-bold">Tags</a></li>
+        {projects.map(project => (
+            <ProjectList projects={projects}/>
+        ))}
+    </Main>
+</Layout>

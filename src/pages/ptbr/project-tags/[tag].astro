@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Project from '../../../components/Project.astro';
+import Layout from '../../../layouts/Layout.astro';
+import H1 from '../../../components/H1.astro';
+import ProjectList from '../../../components/ProjectList.astro';
+import Main from '../../../components/Main.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils'
+
+export const getStaticPaths = async () => {
+    const allProjects = await getCollection("projects");
+    /*
+    console.log("AStro url")
+    console.log(Astro.url.pathname)
+    const lang = getLangFromUrl(Astro.url);
+    const allProjects = await getCollection("projects", ({ id }) => {
+        return id.startsWith(lang);
+    });
+    */
+    // const sortedPosts = allProjects.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const allTags = new Set();
+    allProjects.map(post => {
+        post.data.categories && post.data.categories.map((tag: any) => allTags.add(tag))
+    })
+
+    return Array.from(allTags).map((tag) => {
+        const filteredPosts = allProjects.filter((post) => post.data.categories.includes(tag))
+        return {
+        params: { tag },
+        props: {
+            projects: filteredPosts
+        }
+        };
+    });
+}
+
+const { tag } = Astro.params;
+const { projects } = Astro.props;
+---
+
+<Layout title={tag as string}>
+    <Main>
+        <H1 text=`projetos com a tag ${tag}`/>
+        {projects.map(project => (
+            <ProjectList projects={projects}/>
+        ))}
+    </Main>
+</Layout>

@@ -12,6 +12,7 @@ export const ui = {
     'nav.dark': 'dark',
     'nav.light': 'light',
     'nav.theme': 'theme',
+    'nav.portfolio': 'Portfolio'
   },
   ptbr: {
     'nav.home': 'Home',
@@ -19,5 +20,6 @@ export const ui = {
     'nav.dark': 'escuro',
     'nav.light': 'claro',
     'nav.theme': 'tema',
+    'nav.portfolio': 'Portfólio'
   },
 } as const;

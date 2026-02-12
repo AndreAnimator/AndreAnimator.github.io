@@ -40,7 +40,7 @@ const {Content} = await render(post);
         <H1 text={post.data.title}></H1>
         <div class="tags">
             {post.data.categories.map((tag: string) => (
-            <p class="tag"><a href={`ptbr/tags/${tag}`}>{tag}</a></p>
+            <p class="tag"><a href={`/ptbr/tags/${tag}`}>{tag}</a></p>
             ))}
         </div>
         <Image

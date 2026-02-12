@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Project from '../../../components/Project.astro';
+import Layout from '../../../layouts/Layout.astro';
+import H1 from '../../../components/H1.astro';
+import ProjectList from '../../../components/ProjectList.astro';
+import Main from '../../../components/Main.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+    /*
+    console.log(Astro.url)
+    const lang = getLangFromUrl(Astro.url);
+    const allprojects = await getCollection("projects", ({ id }) => {
+        return id.startsWith(lang);
+    });
+    */
+   const allprojects = await getCollection("projects");
+
+    const uniqueTags = [...new Set(allprojects.map((project: any) => project.data.categories).flat())];
+
+    return uniqueTags.map((tag) => {
+    const filteredprojects = allprojects.filter((project: any) => project.data.categories.includes(tag));
+    return {
+        params: { tag },
+        props: { projects: filteredprojects },
+    };
+    });
+}
+
+const { tag } = Astro.params;
+const { projects } = Astro.props;
+---
+
+<Layout title={tag}>
+    <Main>
+        <H1 text=`projects tagged with ${tag}`/>
+        {projects.map(project => (
+            <ProjectList projects={projects}/>
+        ))}
+    </Main>
+</Layout>

@@ -8,8 +8,6 @@ type Props = {
 };
 
 const { post } = Astro.props;
-console.log(post.data.image)
-console.log(post.id)
 const [lang, ...slug] = post.id.split('/');
 ---
 
