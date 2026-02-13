@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import Main from "../../../components/Main.astro";
+import H1 from "../../../components/H1.astro";
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const allprojects = await getCollection("projects", ({ id }) => {
+        return id.startsWith(lang);
+    });
+
+const tags = [...new Set(allprojects.map((project: any) => project.data.categories).flat())];
+
+---
+
+<Layout title="Blog | Tags ">
+    <Main>
+        <H1 text="Coding Blog Tags"/>
+        <div>
+            {tags.map((tag) => (
+                <p><a href={`/en/project-tags/${tag}`}> {tag} </a></p>
+            ))}
+        </div>
+    </Main>
+</Layout>
