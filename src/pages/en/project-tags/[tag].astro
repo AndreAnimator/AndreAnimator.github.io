@@ -5,38 +5,50 @@ import Layout from '../../../layouts/Layout.astro';
 import H1 from '../../../components/H1.astro';
 import ProjectList from '../../../components/ProjectList.astro';
 import Main from '../../../components/Main.astro';
-import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils'
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
+    const allProjects = await getCollection("projects");
     /*
-    console.log(Astro.url)
+    console.log("AStro url")
+    console.log(Astro.url.pathname)
     const lang = getLangFromUrl(Astro.url);
-    const allprojects = await getCollection("projects", ({ id }) => {
+    const allProjects = await getCollection("projects", ({ id }) => {
         return id.startsWith(lang);
     });
     */
-   const allprojects = await getCollection("projects");
+    // const sortedPosts = allProjects.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const allTags = new Set();
+    allProjects.map(post => {
+        post.data.categories && post.data.categories.map((tag: any) => allTags.add(tag))
+    })
 
-    const uniqueTags = [...new Set(allprojects.map((project: any) => project.data.categories).flat())];
-
-    return uniqueTags.map((tag) => {
-    const filteredprojects = allprojects.filter((project: any) => project.data.categories.includes(tag));
-    return {
+    return Array.from(allTags).map((tag) => {
+        const filteredPosts = allProjects.filter((post) => post.data.categories.includes(tag))
+        return {
         params: { tag },
-        props: { projects: filteredprojects },
-    };
+        props: {
+            projects: filteredPosts
+        }
+        };
     });
 }
 
 const { tag } = Astro.params;
 const { projects } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const tagposts = await getCollection("projects", ({ id }) => {
+        return id.startsWith(lang);
+    });
+console.log(tagposts)
 ---
 
-<Layout title={tag}>
+<Layout title={tag as string}>
     <Main>
-        <H1 text=`projects tagged with ${tag}`/>
-        {projects.map(project => (
-            <ProjectList projects={projects}/>
+        <H1 text=`projects with the tag ${tag}`/>
+        {tagposts.map(project => (
+            <ProjectList projects={tagposts}/>
         ))}
     </Main>
 </Layout>

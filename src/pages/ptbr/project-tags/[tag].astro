@@ -36,13 +36,19 @@ export const getStaticPaths = async () => {
 
 const { tag } = Astro.params;
 const { projects } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const tagposts = await getCollection("projects", ({ id }) => {
+        return id.startsWith(lang);
+    });
+console.log(tagposts)
 ---
 
 <Layout title={tag as string}>
     <Main>
         <H1 text=`projetos com a tag ${tag}`/>
-        {projects.map(project => (
-            <ProjectList projects={projects}/>
+        {tagposts.map(project => (
+            <ProjectList projects={tagposts}/>
         ))}
     </Main>
 </Layout>
