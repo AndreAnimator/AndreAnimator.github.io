@@ -3,15 +3,44 @@ import ThemeDropdown from "./theme-dropdown.astro"
 import ThemeHeadScript from "./theme-head-script.astro";
 import LanguagePicker from '../components/LanguagePicker.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+/*
+<li><a href={`/${lang}/`} class="text-teal-900 font-bold block py-2 px-3 rounded md:p-0 hover:text-teal-200">{t('nav.home')}</a></li>
+            <li><a href={`/${lang}/about`} class="text-teal-900 font-bold block py-2 px-3 rounded md:p-0 hover:text-teal-200">{t('nav.about')}</a></li>
+            <li><a href={`/${lang}/blog`} class="text-teal-900 font-bold block py-2 px-3 rounded md:p-0 hover:text-teal-200">Blog</a></li>
+*/
+
+const menuitems = [
+  {
+    title: t('nav.home'),
+    path: `/${lang}/`,
+  },
+  {
+    title: t('nav.about'),
+    path: `/${lang}/about`,
+  },
+  {
+    title: "Blog",
+    path: `/${lang}/blog`,
+  },
+  {
+    title: "Portfolio",
+    path: `/${lang}/portfolio`,
+  },
+];
+
 ---
 
 <header
-    class="flex justify-between items-center px-24 py-12 max-sm:px-5 max-sm:py-10 max-w-7xl w-full mx-auto"
+    class="flex flex-col lg:flex-row justify-center items-center my-5"
 >
-    <a href="/" class="flex items-center gap-x-4">
+  <Astronav>
+    <div class="flex w-full lg:w-auto items-center justify-between">
+      <a href="/" class="text-lg">
         <img
             src="/logo.webp"
             width={60}
@@ -19,14 +48,32 @@ const t = useTranslations(lang);
             alt="Heartbeat icon"
             class="rounded-2xl aspect=thumbnail object-cover"
         />
-        <p class="uppercase text-3xl text-zinc-900">blog</p>
-    </a>
-    <ul class="flex gap-x-8">
-        <li><a href={`/${lang}/`} class="text-teal-900 font-bold">{t('nav.home')}</a></li>
-        <li><a href={`/${lang}/about`} class="text-teal-900 font-bold">{t('nav.about')}</a></li>
-        <li><a href={`/${lang}/blog`} class="text-teal-900 font-bold">Blog</a></li>
-        <li><a href={`/${lang}/portfolio`} class="text-teal-900 font-bold">{t('nav.portfolio')}</a></li>
-        <li><ThemeDropdown name="theme"></ThemeDropdown></li>
-        <LanguagePicker></LanguagePicker>
-    </ul>
+        <span class="font-bold text-slate-800 dark:text-slate-300">Coding</span><span
+            class="text-slate-500">BLOG</span
+          >
+      </a>
+      <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-gray-800 dark:text-teal-50" />
+      </div>
+    </div>
+    <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3 text-teal-900">
+          {
+            menuitems.map((item, index) => (
+              <>
+                <li>
+                  <a
+                    href={item.path}
+                    class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900 dark:hover:text-gray-300">
+                    {item.title}
+                  </a>
+                </li>
+              </>
+            ))
+          }
+          <li><ThemeDropdown name="theme"></ThemeDropdown></li>
+          <li><LanguagePicker></LanguagePicker></li>
+        </ul>
+      </MenuItems>
+  </Astronav>
 </header>

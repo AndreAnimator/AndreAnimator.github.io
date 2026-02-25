@@ -30,7 +30,7 @@ function getPath(lang_org: string){
   let lang = getLangFromUrl(Astro.url);
   var url = Astro.url.pathname.split( '/' );
   var title = '';
-  if(url.length > 3 && (url[2] == 'blog' || url[2] == 'portfolio')){
+  if(url.length > 3 && (url[2] == 'blog' || url[2] == 'portfolio') && url[3] != ''){
     var aux = url[3];
     if(lang_org == 'en'){
       var i = getIndex(aux, lang);
@@ -48,7 +48,7 @@ function getPath(lang_org: string){
 }
 
 ---
-<ul>
+<ul class="md:p-0 block">
   {Object.entries(languages).map(([lang, label]) => (
     <li>
       <a href={`/${lang}/${getPath(lang)}`}>{label}</a>
