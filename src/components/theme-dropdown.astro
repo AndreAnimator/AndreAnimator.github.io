@@ -1,71 +1,72 @@
 ---
-interface Link {
-  name: string;
-  url: string;
-}
-
-interface Props {
-  name: string;
-  // links: Link[];
-}
-
-const { name = 'Dropdown' } = Astro.props;
-// , links = []
-import Button from './Button.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-/*
-Na hora de fazer genérico esse componente vou precisar disso, provavelmente:
-    {
-      links.map((link) => (
-        <a
-          href={link.url}
-          class="m-1 block rounded-md px-2 py-2 text-sm text-slate-300/80 transition-colors duration-200 hover:bg-slate-700 hover:text-slate-200/95">
-          {link.name}
-        </a>
-      ))
-    }
-
-*/
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
+import { Icon } from 'astro-icon/components';
 ---
 
-<div class="relative md:p-0 block">
-  <Button name={t('nav.theme')} id="dropdown-button" showCaret={true} />
-  <div
-    id="dropdown"
-    class="absolute mt-2 hidden text-balance rounded-md bg-slate-200 dark:bg-slate-800 p-[0.5px] sm:ml-2 md:w-25">
-    <Button name={t('nav.dark')} id="dark-button" showCaret={false} />
-    <Button name={t('nav.light')} id="light-button" showCaret={false} />
-  </div>
-</div>
+<button type="button" aria-label="toggle dark/light mode" id="themeToggle">
+  <span class="dark:hidden inline">
+    <Icon name="feather:moon"></Icon>
+  </span>
+  <span class="dark:inline hidden">
+    <Icon name="feather:sun"></Icon>
+  </span>
+</button>
 
 <script>
-  const button = document.getElementById('dropdown-button');
-  const dropdown = document.getElementById('dropdown');
-  const dark_button = document.getElementById('dark-button');
-  const light_button = document.getElementById('light-button');
+  import { themeStore, THEME_MAP } from '../libs/stores/theme';
 
-  button!.addEventListener('click', (event) => {
-    dropdown!.classList.toggle('hidden');
-    button!.classList.toggle('dropdown-active');
-    event.stopPropagation();
-  });
+  document.addEventListener("astro:page-load", () => {
+  // Get current theme from store
+    let currentTheme = themeStore.get();
+    
+    // Apply initial theme to document
+    if (currentTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
 
-  document.addEventListener('click', () => {
-    button!.classList.remove('dropdown-active');
-    dropdown!.classList.add('hidden');
-  });
+    const handleToggleClick = () => {
+      // Toggle between light and dark
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      // Update the store (this will also update localStorage if your store does that)
+      themeStore.set(newTheme);
+      
+      // Update document class
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      
+      // Update current theme
+      currentTheme = newTheme;
+    };
 
-  light_button!.addEventListener('click', (event) => {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  });
+    // Subscribe to store changes (in case theme is changed elsewhere)
+    const unsubscribe = themeStore.subscribe((newTheme) => {
+      currentTheme = newTheme;
+      
+      // Update document class when store changes
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
 
-  dark_button!.addEventListener('click', (event) => {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
+    // Add click listener
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', handleToggleClick);
+    }
+
+    // Cleanup on page navigation/refresh
+    window.addEventListener('beforeunload', () => {
+      unsubscribe();
+      if (themeToggle) {
+        themeToggle.removeEventListener('click', handleToggleClick);
+      }
+    });
   });
 </script>

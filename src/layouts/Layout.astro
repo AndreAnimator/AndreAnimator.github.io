@@ -29,10 +29,10 @@ const { title, description = "Coding blog and portfolio.", image = "/src/content
 		<meta property="og:image" content={image} />
 		<title>{title}</title>
 		<ClientRouter></ClientRouter>
-		<ThemeHeadScript />
+		<ThemeHeadScript/>
 	</head>
 	<body class="min-h-screen bg-white dark:bg-gray-800">
-		<Header />
+		<Header transition:persist/>
 		<slot />
 		<Footer />
 	</body>
