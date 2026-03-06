@@ -4,6 +4,7 @@ import ThemeHeadScript from "./theme-head-script.astro";
 import LanguagePicker from '../components/LanguagePicker.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Icon } from 'astro-icon/components';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -71,7 +72,8 @@ const menuitems = [
               </>
             ))
           }
-          <li><div class="flex  align-bottom lg:px-3 py-3"><ThemeDropdown client:load></ThemeDropdown></div></li>
+          <li><a href="https://andreanimator.github.io/rss" class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900 dark:hover:text-gray-300"><Icon name="feather:rss"></Icon></a></li>
+          <li><div class="flex align-bottom lg:px-3 py-3"><ThemeDropdown></ThemeDropdown></div></li>
           <li><LanguagePicker></LanguagePicker></li>
         </ul>
       </MenuItems>

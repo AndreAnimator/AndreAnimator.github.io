@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Log from './Log.astro';
+type Props = {
+    logs: CollectionEntry<'logs'>[];
+};
+
+const { logs } = Astro.props;
+---
+
+<div>
+    {logs.map((log) => <Log log={log} />)}
+</div>

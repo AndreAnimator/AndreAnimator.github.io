@@ -12,7 +12,7 @@ const PostsCollection = defineCollection({
 });
 
 const ProjectsCollection = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/posts" }),
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/projects" }),
     schema: ({ image }) => z.object({
         author: z.string(),
         date: z.string(),
@@ -24,7 +24,16 @@ const ProjectsCollection = defineCollection({
     }),
 });
 
+const LogsCollection = defineCollection({
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/logs" }),
+    schema: ({ image }) => z.object({
+        date: z.string(),
+        title: z.string(),
+    }),
+});
+
 export const PostCollection = {
     posts: PostsCollection,
-    projects: ProjectsCollection
+    projects: ProjectsCollection,
+    logs: LogsCollection
 };

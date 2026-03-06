@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Post from '../../../components/Post.astro';
+import Layout from '../../../layouts/Layout.astro';
+import Main from '../../../components/Main.astro';
+import H1 from '../../../components/H1.astro';
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+export const getStaticPaths = async () => {
+    const logss = await getCollection("logs");
+    const paths = logss.map(log => {
+        const [lang, ...slug] = log.id.split('/');
+        return {
+            params: {
+                lang,
+                slug: slug.join('/') || undefined
+            },
+            props: {
+                log
+            }
+        }
+    })
+    return paths;
+}
+
+type Props = {
+    log: CollectionEntry<"logs">
+}
+
+const {log} = Astro.props;
+const {Content} = await render(log);
+---
+
+<Layout title={log.data.title}>
+    <Main>
+        <H1 text={log.data.title}></H1>
+        <div class="prose prose-2xl overflow-visible relative mb-20">
+            <Content/>
+        </div>
+    </Main>
+</Layout>

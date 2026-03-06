@@ -1,0 +1,24 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { getLangFromUrl } from "../i18n/utils";
+
+type Props = {
+    log: CollectionEntry<'logs'>;
+};
+
+const { log } = Astro.props;
+const [lang, ...slug] = log.id.split('/');
+---
+
+<article>
+    <a
+        href={`/${lang}/changelog/${slug}`}
+        class="text-4xl text-zinc-900 font-semibold"
+    >
+        <h2>{log.data.title}</h2>
+    </a>
+    <p class="text-zinc-500 text-2xl line-clamp-2">
+        {log.body}
+    </p>
+</article>

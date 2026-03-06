@@ -30,7 +30,7 @@ function getPath(lang_org: string){
   let lang = getLangFromUrl(Astro.url);
   var url = Astro.url.pathname.split( '/' );
   var title = '';
-  if(url.length > 3 && (url[2] == 'blog' || url[2] == 'portfolio') && url[3] != ''){
+  if(url.length > 3 && (url[2] == 'blog' || url[2] == 'portfolio' || url[2] == 'changelog') && url[3] != ''){
     var aux = url[3];
     if(lang_org == 'en'){
       var i = getIndex(aux, lang);

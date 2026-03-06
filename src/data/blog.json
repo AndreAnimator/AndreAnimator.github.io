@@ -6,5 +6,9 @@
     {
         "en": "stoicats.mdx",
         "ptbr": "stoicatsbr.mdx"
+    },
+    {
+        "en":"first_update.mdx",
+        "ptbr":"primeiro_update.mdx"
     }
 ]
