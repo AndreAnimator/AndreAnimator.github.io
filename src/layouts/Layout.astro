@@ -40,9 +40,9 @@ const { title, description = "Coding blog and portfolio.", image = "/src/content
 	</head>
 	<body class="w-full min-h-screen bg-white dark:bg-gray-800">
 		<Header transition:persist/>
-		<div class="flex items-start mt-8 gap-6" >
-			<slot class="w-9/12" />
-			<div class="w-3/12">
+		<div class="lg:flex lg:items-start mt-8 gap-6" >
+			<slot class="lg:w-9/12" />
+			<div class="lg:w-3/12">
 				<a href=`/${lang}/changelog`>
 					<h1>Changelogs</h1>
 				</a>
