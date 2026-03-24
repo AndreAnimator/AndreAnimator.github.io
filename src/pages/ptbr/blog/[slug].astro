@@ -38,7 +38,7 @@ const {Content} = await render(post);
 <Layout title={post.data.title}>
     <Main>
         <H1 text={post.data.title}></H1>
-        <div class="tags">
+        <div class="tags mb-2">
             {post.data.categories.map((tag: string) => (
             <p class="tag"><a href={`/ptbr/tags/${tag}`} class="rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2">{tag}</a></p>
             ))}

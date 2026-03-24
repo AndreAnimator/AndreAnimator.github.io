@@ -6,6 +6,24 @@
   --rotation: random(20deg, -20deg);
 }
 
+code {
+    @variant dark {
+        color: var(--color-gray-400);
+    }
+}
+
+a {
+    @variant dark {
+        color: var(--color-gray-400);
+    }
+}
+
+h1 {
+    @variant dark {
+        color: var(--color-gray-50);
+    }
+}
+
 h2 {
     @variant dark {
         color: var(--color-gray-50);
