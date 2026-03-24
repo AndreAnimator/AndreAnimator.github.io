@@ -1,5 +1,10 @@
 ---
 const { platform, username } = Astro.props;
+import { Icon } from 'astro-icon/components';
+//p-5 w-4 h-4 
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a href={`https://www.${platform}.com/${username}`}>
+    
+    <Icon name=`feather:${platform}` class="w-10 h-10 p-2 bg-white rounded-2xl dark:text-white text-gray-800 hover:bg-amber-300 dark:bg-gray-800 dark:hover:bg-emerald-900"></Icon>
+</a>

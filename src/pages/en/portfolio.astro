@@ -17,7 +17,7 @@ const projects = await getCollection("projects", ({ id }) => {
 <Layout title="Portfolio | Projects">
     <Main>
         <H1 text="Portfolio Projects"/>
-        <li><a href="/en/project-tags" class="text-teal-900 font-bold">Tags</a></li>
+        <li><a href="/en/project-tags" class="text-teal-900 font-bold">Portfolio Tags</a></li>
         {projects.map(project => (
             <ProjectList projects={projects}/>
         ))}

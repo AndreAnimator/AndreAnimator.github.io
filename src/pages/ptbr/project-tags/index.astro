@@ -20,7 +20,7 @@ const tags = [...new Set(allProjects.map((project: any) => project.data.categori
         <H1 text="Tags dos projetos"/>
         <div>
             {tags.map((tag) => (
-                <p><a href={`/ptbr/project-tags/${tag}`}> {tag} </a></p>
+                <p class="m-3"><a href={`/ptbr/project-tags/${tag}`}  class="rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2"> {tag} </a></p>
             ))}
         </div>
     </Main>

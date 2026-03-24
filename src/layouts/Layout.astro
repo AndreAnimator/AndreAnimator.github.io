@@ -38,19 +38,20 @@ const { title, description = "Coding blog and portfolio.", image = "/src/content
 		<ClientRouter></ClientRouter>
 		<ThemeHeadScript/>
 	</head>
-	<body class="w-full min-h-screen bg-white dark:bg-gray-800">
+	<body class="grid grid-rows-[auto-1fr-auto] min-h-screen bg-white dark:bg-gray-800">
 		<Header transition:persist/>
 		<div class="lg:flex lg:items-start mt-8 gap-6" >
 			<slot class="lg:w-9/12" />
-			<div class="lg:w-3/12">
+			<div class="lg:w-3/12 rounded-2xl border-amber-600 dark:border-emerald-500 border-5 p-3">
 				<a href=`/${lang}/changelog`>
-					<h1>Changelogs</h1>
+					<h2 class="text-gray-50 bg-amber-600 dark:bg-emerald-500 font-bold p-1 text-center">Changelogs</h2>
 				</a>
 				{logs.map(log => (
 					<LogList logs={logs}/>
 				))}
 			</div>
 		</div>
+		
 		<Footer />
 	</body>
 </html>

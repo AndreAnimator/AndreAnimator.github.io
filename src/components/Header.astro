@@ -19,29 +19,34 @@ const menuitems = [
   {
     title: t('nav.home'),
     path: `/${lang}/`,
+    id: "home",
   },
   {
     title: t('nav.about'),
     path: `/${lang}/about`,
+    id: "about",
   },
   {
     title: "Blog",
     path: `/${lang}/blog`,
+    id: "blog",
   },
   {
     title: "Portfolio",
     path: `/${lang}/portfolio`,
+    id: "portfolio",
   },
 ];
 
 ---
 
 <header
-    class="flex flex-col lg:flex-row justify-center items-center my-5"
+    class="flex flex-col min-h-fit lg:flex-row justify-center items-center lg:py-5 background-light dark:background-dark border-b-10 border-amber-600 dark:border-emerald-500 dark:bg-gray-800"
+  onload="activate()"
 >
   <Astronav>
-    <div class="flex w-full lg:w-auto items-center justify-between">
-      <a href=`/${lang}/` class="text-lg">
+    <div class="my-5 flex flex-col items-center justify-between lg:flex-row">
+      <a href=`/${lang}/` class="flex w-full lg:w-auto items-center justify-between text-lg lg:px-3 mt-5 mb-3 ml-5">
         <img
             src="/logo.webp"
             width={60}
@@ -49,15 +54,18 @@ const menuitems = [
             alt="Heartbeat icon"
             class="rounded-2xl aspect=thumbnail object-cover"
         />
-        <span class="font-bold text-slate-800 dark:text-slate-300">Coding</span><span
-            class="text-slate-500">BLOG</span
-          >
+        <span class="font-bold text-slate-800 dark:text-slate-300 flex wave-container wave-text">
+          <span class="">C</span><span class="relative animate-spin">o</span><span class="relative animate-spin">d</span><span class="relative animate-spin">i</span><span class="relative animate-spin">n</span><span class="relative animate-spin">g</span>
+        </span>
+        <span class="flex text-slate-500 spin-container spin-text">
+          <span>B</span><span>L</span><span>O</span><span>G</span>
+        </span>
       </a>
-      <div class="block lg:hidden">
-        <MenuIcon class="w-4 h-4 text-gray-800 dark:text-teal-50" />
+      <div class="block lg:hidden text-lg mr-5 lg:w-auto">
+        <MenuIcon class="w-10 h-10 px-3 py-3 text-gray-800 dark:text-gray-50 hover:text-gray-500 dark:hover:text-gray-300 bg-white hover:bg-amber-300 dark:bg-gray-800 dark:hover:bg-emerald-900 rounded-2xl" />
       </div>
     </div>
-    <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+    <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 lg:h-auto lg:px-0 max-lg:bg-white max-md:dark:bg-gray-800 max-lg:border-amber-600 max-lg:dark:border-emerald-500 max-lg:border-y-5">
         <ul class="flex flex-col lg:flex-row lg:gap-3 text-teal-900">
           {
             menuitems.map((item, index) => (
@@ -65,17 +73,36 @@ const menuitems = [
                 <li>
                   <a
                     href={item.path}
-                    class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900 dark:hover:text-gray-300">
+                    class="flex font-bold px-3 py-3 text-gray-800 dark:text-gray-50 hover:text-gray-500 dark:hover:text-gray-300 bg-white hover:bg-amber-300 dark:bg-gray-800 dark:hover:bg-emerald-900 rounded-2xl max-lg:rounded-none" id={item.id}>
                     {item.title}
                   </a>
                 </li>
               </>
             ))
           }
-          <li><a href="https://andreanimator.github.io/rss" class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900 dark:hover:text-gray-300"><Icon name="feather:rss"></Icon></a></li>
-          <li><div class="flex align-bottom lg:px-3 py-3"><ThemeDropdown></ThemeDropdown></div></li>
+          <li><a href="https://andreanimator.github.io/rss" class="flex px-3 py-4 text-gray-800 dark:text-gray-50 hover:text-gray-500 dark:hover:text-gray-300 bg-white hover:bg-amber-300 dark:bg-gray-800 dark:hover:bg-emerald-900 rounded-2xl max-lg:rounded-none"><Icon name="feather:rss"></Icon></a></li>
+          <li><div class=""><ThemeDropdown></ThemeDropdown></div></li>
           <li><LanguagePicker></LanguagePicker></li>
         </ul>
       </MenuItems>
   </Astronav>
 </header>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    console.log("Alou");
+    function activate() {
+      console.log("Alou");
+      var url = window.location.href.split( '/' );
+      console.log(url);
+      if(url[4]){
+        var active_item = document.getElementById(url[4]);
+        active_item?.classList.add("active");
+      }
+      else{
+        var active_item = document.getElementById("home");
+        active_item?.classList.add("active");
+      }
+    };
+    activate();
+  });
+</script>

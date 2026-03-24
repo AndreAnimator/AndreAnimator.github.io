@@ -48,10 +48,10 @@ function getPath(lang_org: string){
 }
 
 ---
-<ul class="md:p-0 block">
+<ul class="lg:flex-row lg:px-3 md:p-0 block font-bold text-gray-800 dark:text-gray-50 lg:w-auto">
   {Object.entries(languages).map(([lang, label]) => (
     <li>
-      <a href={`/${lang}/${getPath(lang)}`}>{label}</a>
+      <a href={`/${lang}/${getPath(lang)}`} class="flex dark:hover:text-gray-300 hover:text-gray-500 bg-white hover:bg-amber-300 dark:bg-gray-800 dark:hover:bg-emerald-900 rounded-2xl px-3 max-lg:rounded-none">{label}</a>
     </li>
   ))}
 </ul>

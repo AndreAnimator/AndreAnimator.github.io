@@ -2,11 +2,11 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-<button type="button" aria-label="toggle dark/light mode" id="themeToggle">
-  <span class="dark:hidden inline">
+<button type="button" aria-label="toggle dark/light mode" id="themeToggle" class="lg:w-auto lg:flex-row flex align-bottom lg:px-3 py-4 text-gray-800 dark:text-gray-50 hover:text-gray-500 dark:hover:text-gray-300 bg-white hover:bg-amber-300 dark:bg-gray-800 dark:hover:bg-emerald-900 rounded-2xl cursor-pointer max-lg:rounded-none">
+  <span class="dark:hidden flex px-3">
     <Icon name="feather:moon"></Icon>
   </span>
-  <span class="dark:inline hidden">
+  <span class="dark:inline hidden px-3">
     <Icon name="feather:sun"></Icon>
   </span>
 </button>

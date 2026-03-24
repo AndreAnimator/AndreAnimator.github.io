@@ -15,12 +15,12 @@ const tags = [...new Set(allprojects.map((project: any) => project.data.categori
 
 ---
 
-<Layout title="Blog | Tags ">
+<Layout title="Portfolio | Tags ">
     <Main>
-        <H1 text="Coding Blog Tags"/>
+        <H1 text="Project Tags"/>
         <div>
             {tags.map((tag) => (
-                <p><a href={`/en/project-tags/${tag}`}> {tag} </a></p>
+                <p class="m-3"><a href={`/en/project-tags/${tag}`} class="rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1"> {tag} </a></p>
             ))}
         </div>
     </Main>

@@ -38,13 +38,13 @@ const {Content} = await render(project);
         <H1 text={project.data.title}></H1>
         <div class="tags grid grid-cols-6">
             {project.data.categories.map((tag: string) => (
-            <p class="tag"><a href={`/en/project-tags/${tag}`}>{tag}</a></p>
+            <p class="tag"><a href={`/en/project-tags/${tag}`} href={`/en/tags/${tag}`} class="tag rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2">{tag}</a></p>
             ))}
         </div>
         <div class="urls grid grid-cols-3">
-            <a class="text-4xl text-zinc-900 font-semibold inline-block" href={`${project.data.docs}`}> DOCS </a>
-            <a class="text-4xl text-zinc-900 font-semibold inline-block" href={`${project.data.url}`}> URL </a>
-            <a class="text-4xl text-zinc-900 font-semibold inline-block" href={`${project.data.github}`}> GITHUB </a>
+            <a class="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-shadow-amber-800 dark:hover:text-emerald-800 font-semibold inline-block" href={`${project.data.docs}`}> DOCS </a>
+            <a class="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-shadow-amber-800 dark:hover:text-emerald-800 font-semibold inline-block" href={`${project.data.url}`}> URL </a>
+            <a class="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-shadow-amber-800 dark:hover:text-emerald-800 font-semibold inline-block" href={`${project.data.github}`}> GITHUB </a>
         </div>
         <Image
             src={project.data.image}

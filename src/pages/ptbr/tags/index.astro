@@ -21,7 +21,7 @@ const tags = [...new Set(allPosts.map((post: any) => post.data.categories).flat(
         <H1 text="Tags do Blog de Programação"/>
         <div>
             {tags.map((tag) => (
-                <p><a href={`/ptbr/tags/${tag}`}> {tag} </a></p>
+                <p class="m-3"><a href={`/ptbr/tags/${tag}`} class="rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2"> {tag} </a></p>
             ))}
         </div>
     </Main>
