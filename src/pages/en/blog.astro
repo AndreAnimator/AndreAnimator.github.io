@@ -17,7 +17,7 @@ const posts = await getCollection("posts", ({ id }) => {
 <Layout title="Blog | Coding Blog">
     <Main>
         <H1 text="Coding Blog"/>
-        <li><a href="/en/tags" class="text-teal-900 font-bold">Coding blog Tags</a></li>
+        <li class="list-none"><a href="/en/tags" class="text-teal-900 font-bold">Coding blog Tags</a></li>
         {posts.map(post => (
             <PostList posts={posts}/>
         ))}
