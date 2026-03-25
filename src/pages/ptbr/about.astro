@@ -20,10 +20,58 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 	<Main>
 		<H1 text={pageTitle}/>
         <p>Oi eu sou o {identity.firstName}!! Prazer em conhecê-lo!!</p>
+    <h2 class="text-left text-4xl font-bold">Algumas habilidades minhas são:</h2>
+        <section class="carousel">
 
+            <div class="container-fluid px-0">
+                <div class="row">
+                <div class="col-12">
+                    <div class="carousel__wrapper">
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/html-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/css3-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/javascript-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/react-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/astro-logo-light-gradient.png');"></div>
+                    </div>
+
+                    <!--#### repeat ####-->
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/html-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/css3-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/javascript-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/react-logo.png');"></div>
+                    </div>
+
+                    <div class="carousel__slide">
+                        <div class="carousel__image" style="background-image: url('/images/astro-logo-light-gradient.png"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </section>
 	<Main>
-    <p>Algumas habilidades minhas são:</p>
-    <ul>
-        {skills.map((skill) => <li class="tag rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2">{skill}</li>)}
-    </ul>
 </Layout>

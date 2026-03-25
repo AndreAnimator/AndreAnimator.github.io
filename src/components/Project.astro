@@ -27,9 +27,9 @@ const [lang, ...slug] = project.id.split('/');
     >
         <h2>{project.data.title}</h2>
     </a>
-    <div class="tags grid grid-cols-6">
+    <div class="tags flex">
         {project.data.categories.map((tag: string) => (
-        <p class="mt-2 mb-2"><a href={`/${lang}/project-tags/${tag}`} class="tag rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-2">{tag}</a></p>
+        <p class="mt-2 mb-2"><a href={`/${lang}/project-tags/${tag}`} class="tag m-2 rounded-2xl  bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 text-gray-50">{tag}</a></p>
         ))}
     </div>
     <div class="urls grid grid-cols-3">
