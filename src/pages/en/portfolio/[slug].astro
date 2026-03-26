@@ -36,7 +36,7 @@ const {Content} = await render(project);
 <Layout title={project.data.title}>
     <Main>
         <H1 text={project.data.title}></H1>
-        <div class="tags grid grid-cols-6">
+        <div class="tags flex">
             {project.data.categories.map((tag: string) => (
             <p class="tag"><a href={`/en/project-tags/${tag}`} href={`/en/tags/${tag}`} class="tag rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2">{tag}</a></p>
             ))}
@@ -53,7 +53,7 @@ const {Content} = await render(project);
             alt={project.data.title}
             class="rounded-2xl shadow-xl mb-4 aspect-thumnail object-cover"
         />
-        <div class="prose prose-2xl overflow-visible relative mb-20">
+        <div class="prose prose-2xl break-all overflow-visible relative mb-20">
             <Content/>
         </div>
     </Main>

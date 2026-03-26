@@ -125,10 +125,34 @@ p {
 
 :root {
   --no-of-slides: 5;
-  --slides-in-view: 4;
+  --slides-in-view: 1;
   --slide-width: 200px;
   --slide-height: 300px;
   --iteration-time: 10s;
+}
+
+@media screen and (min-width: 300px) {
+    :root{
+        --slides-in-view: 1;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    :root{
+        --slides-in-view: 2;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    :root{
+        --slides-in-view: 3;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    :root{
+        --slides-in-view: 4;
+    }
 }
 
 @keyframes scroll {
