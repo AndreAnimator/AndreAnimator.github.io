@@ -50,7 +50,7 @@ const {Content} = await render(post);
             alt={post.data.title}
             class="rounded-2xl shadow-xl mb-4 aspect-thumnail object-cover"
         />
-        <div class="prose prose-2xl break-all overflow-visible relative mb-20">
+        <div class="md:prose xl:prose-xl sm:prose lg:prose-lg dark:prose-dark max-w-none! break-after-auto overflow-visible relative [&>h3]:dark:text-gray-200 [&>ol]:dark:text-zinc-500 [&>strong]:dark:text-white [&>p>strong]:dark:text-white [&>ol>li>strong]:dark:text-white [&>h4]:dark:text-gray-400 m-0!">
             <Content/>
         </div>
     </Main>
