@@ -40,7 +40,7 @@ const {Content} = await render(project);
         <H1 text={project.data.title}></H1>
         <div class="tags flex">
             {project.data.categories.map((tag: string) => (
-            <p class="tag"><a href={`/ptbr/project-tags/${tag}`} href={`/en/tags/${tag}`} class="tag rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2">{tag}</a></p>
+            <p class="tag"><a href={`/ptbr/project-tags/${tag}`} href={`/en/tags/${tag}`} class="overflow-hidden whitespace-nowrap tag rounded-2xl text-gray-50 bg-amber-600 dark:bg-emerald-500 h-9 w-fit px-2 py-1 m-2">{tag}</a></p>
             ))}
         </div>
         <div class="urls grid grid-cols-3">

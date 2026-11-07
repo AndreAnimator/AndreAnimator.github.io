@@ -1,14 +1,18 @@
 [
-    {
-        "en": "hello.mdx",
-        "ptbr": "ola.mdx"
-    },
-    {
-        "en": "stoicats.mdx",
-        "ptbr": "stoicatsbr.mdx"
-    },
-    {
-        "en":"first_update.mdx",
-        "ptbr":"primeiro_update.mdx"
-    }
+  {
+    "en": "hello.mdx",
+    "ptbr": "ola.mdx"
+  },
+  {
+    "en": "stoicats.mdx",
+    "ptbr": "stoicatsbr.mdx"
+  },
+  {
+    "en": "first_update.mdx",
+    "ptbr": "primeiro_update.mdx"
+  },
+  {
+    "en": "update2.mdx",
+    "ptbr": "update2br.mdx"
+  }
 ]

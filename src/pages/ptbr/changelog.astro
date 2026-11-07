@@ -17,8 +17,6 @@ const logs = await getCollection("logs", ({ id }) => {
 <Layout title="Changelog">
     <Main>
         <H1 text="Changelogs"/>
-        {logs.map(log => (
-            <LogList logs={logs}/>
-        ))}
+        <LogList logs={logs}/>
     </Main>
 </Layout>

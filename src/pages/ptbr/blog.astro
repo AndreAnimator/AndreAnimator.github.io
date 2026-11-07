@@ -18,8 +18,6 @@ const posts = await getCollection("posts", ({ id }) => {
     <Main>
         <H1 text="Blog de Programação"/>
         <li class="list-none"><a href="/ptbr/tags" class="text-teal-900 font-bold dark:text-teal-600">Tags do blog de Programação</a></li>
-        {posts.map(post => (
-            <PostList posts={posts}/>
-        ))}
+        <PostList posts={posts}/>
     </Main>
 </Layout>
