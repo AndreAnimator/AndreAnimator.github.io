@@ -20,7 +20,7 @@ const lang = getLangFromUrl(Astro.url);
 const logs = await getCollection("logs", ({ id }) => {
         return id.startsWith(lang);
     });
-const { title, description = "Coding blog and portfolio.", image = "/src/content/posts/images/fire.webp" } = Astro.props;
+const { title, description = "Coding blog and portfolio.", image = "/src/content/posts../../../assets/images/fire.webp" } = Astro.props;
 ---
 
 

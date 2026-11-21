@@ -1,4 +1,5 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { file, glob } from "astro/loaders";
 
 const PostsCollection = defineCollection({
@@ -6,9 +7,11 @@ const PostsCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       author: z.string(),
+      categories: z.array(z.string()),
       date: z.string(),
       image: image(),
       title: z.string(),
+      description: z.string(),
     }),
 });
 
@@ -21,11 +24,13 @@ const ProjectsCollection = defineCollection({
     z.object({
       author: z.string(),
       date: z.string(),
+      categories: z.array(z.string()),
       docs: z.nullable(z.string()),
       url: z.nullable(z.string()),
       github: z.nullable(z.string()),
       image: image(),
       title: z.string(),
+      description: z.string(),
     }),
 });
 
@@ -38,10 +43,11 @@ const LogsCollection = defineCollection({
     z.object({
       date: z.string(),
       title: z.string(),
+      description: z.string(),
     }),
 });
 
-export const PostCollection = {
+export const collections = {
   posts: PostsCollection,
   projects: ProjectsCollection,
   logs: LogsCollection,

@@ -1,8 +1,9 @@
 ---
 import { languages } from '../i18n/ui';
 import { getLangFromUrl } from '../i18n/utils';
-import blog  from "../data/blog.json";
+// import blog  from "../data/blog.json";
 
+/*
 function getIndex(aux: string, lang: string){
   var index = 0;
   var filteredObj = blog.find(function(item, i){
@@ -25,11 +26,14 @@ function getIndex(aux: string, lang: string){
     return index;
   }
 }
+*/
 
 function getPath(lang_org: string){
   let lang = getLangFromUrl(Astro.url);
-  var url = Astro.url.pathname.split( '/' );
-  var title = '';
+  var url = Astro.url.pathname.split("/");
+  var path = url.slice(2).join('/');
+  return path;
+  /*
   if(url.length > 3 && (url[2] == 'blog' || url[2] == 'portfolio' || url[2] == 'changelog') && url[3] != ''){
     var aux = url[3];
     if(lang_org == 'en'){
@@ -45,6 +49,7 @@ function getPath(lang_org: string){
     return string;
   }
   return Astro.url.pathname.replace(`/${lang}/`, '');
+  */
 }
 
 ---

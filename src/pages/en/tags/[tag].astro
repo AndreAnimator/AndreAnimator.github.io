@@ -15,7 +15,9 @@ export async function getStaticPaths() {
         return id.startsWith(lang);
     });
     */
-   const allPosts = await getCollection("posts");
+    const allPosts = await getCollection("posts", ({ id }) => {
+        return id.startsWith('en');
+    });
 
     const uniqueTags = [...new Set(allPosts.map((post: any) => post.data.categories).flat())];
 
@@ -35,8 +37,6 @@ const { posts } = Astro.props;
 <Layout title={tag}>
     <Main>
         <H1 text=`Posts tagged with ${tag}`/>
-        {posts.map(post => (
-            <PostList posts={posts}/>
-        ))}
+        <PostList posts={posts}/>
     </Main>
 </Layout>

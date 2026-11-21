@@ -8,7 +8,7 @@ import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
     const posts = await getCollection("posts");
     const paths = posts.map(post => {
         const [lang, ...slug] = post.id.split('/');
@@ -17,19 +17,22 @@ export const getStaticPaths = async () => {
                 lang,
                 slug: slug.join('/') || undefined
             },
-            props: {
-                post
-            }
-        }
-    })
+            props: post
+        };
+    });
     return paths;
 }
 
+const { lang, slug } = Astro.params;
+console.log("tem sllug");
+console.log(slug);
+/*
 type Props = {
     post: CollectionEntry<"posts">
 }
+*/
 
-const {post} = Astro.props;
+const post = Astro.props;
 const {Content} = await render(post);
 ---
 

@@ -1,0 +1,46 @@
+---
+date: 07/11/2026
+title: Update 0.3
+description: "Muitas adições e mudanças."
+---
+
+Atualização para novas versões. Projeto novo. Mudanças no comportamento por debaixo dos panos. Mudanças de estilização.
+
+## Misc
+
+Atualizei o node, pacotes e o astro para as versões mais recentes.
+
+## Nova Feature
+
+Tentei fazer o botão de copiar código em trechos de código do zero, entendi a lógica mas não soube referênciar biblioteca de componentes para criar com javascript (queria manter o uso da biblioteca de íconees do feather o projeto inteiro).
+Por isso, adicionei astro-expressive-code pra me poupar um pouco de tempo.
+
+Adicionei aos schemas dos projetos, logs e posts para aceitar o campo de descrição, que será exibido nos cards de cada conteúdo.
+
+## Estilizando
+
+Adicionei quebra de linha nas Tags dos cards de projetos e posts.
+
+Adicionei tema dark para os elementos que fazem uso do Prose do tailwindcss.
+
+Consertei a estilização da página de projeto pra quando não tem DOCS ou URL no projeto. Adicionei quebra de linha para as tags da página de um projeto.
+
+## Por de baixo dos panos
+
+Mudei a forma como o seletor de linguagem funcionando, tornando obsoleto o uso do arquivo data.json (e fui afundo resolver as falhas da implementação que eu fiz do i18n que tem no site).
+
+Coloquei as imagens do site dentro de /src/ pra poder fazer uso das otimizações de imagem que o astro fornece.
+
+Arrumei a duplicação de posts dentro de uma tag.
+
+Arrumei a exportação de Colections e transformei categories para ser um array de strings.
+
+Mudei o locale para ser
+
+## Novo Post
+
+Adicionei um novo projeto chamado EnjoyStick.
+
+## Traduções
+
+Não teve nenhum ainda.

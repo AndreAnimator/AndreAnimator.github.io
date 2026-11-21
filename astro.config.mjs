@@ -1,25 +1,32 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite';
+import { satteri } from "@astrojs/markdown-satteri";
 
-import mdx from '@astrojs/mdx';
+import tailwindcss from "@tailwindcss/vite";
 
-import vue from '@astrojs/vue';
+import mdx from "@astrojs/mdx";
+
+import vue from "@astrojs/vue";
 
 import icon from "astro-icon";
+
+import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
 
-  integrations: [mdx(), vue(), icon()],
-  site: 'https://andreanimator.github.io/',
+  integrations: [expressiveCode(), mdx(), vue(), icon()],
+  markdown: {
+    processor: satteri(),
+  },
+  site: "https://andreanimator.github.io/",
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "pt-br"],
+    locales: ["en", "ptbr"],
     routing: {
       prefixDefaultLocale: true, // Ensures that your default locale is prefixed aswell
     },
