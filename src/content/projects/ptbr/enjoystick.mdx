@@ -18,25 +18,45 @@ featured: true
 docs: "https://andreanimator.github.io/enjoystick-docs/"
 url: "https://enjoystick.onrender.com/"
 github: "https://github.com/AndreAnimator/enjoystick"
-image: "/images/enjoystick/banner_app.png"
+image: "../../../assets/images/enjoystick/banner_app.png"
 title: EnjoyStick
+description: "E-Commerce de controles de vídeo-game e controles modificados para acessibilidade"
 ---
+
+import { Image } from "astro:assets";
+import logo from "../../../assets/images/enjoystick/LOGO BANNER.png";
+import home from "../../../assets/images/enjoystick/home.png";
+import product from "../../../assets/images/enjoystick/product.png";
+import { Icon } from "astro-icon/components";
 
 # Enjoystick: API da loja virtual
 
-<img align="center" src="/images/enjoystick/LOGO BANNER.png" />
+<div align="center">
+  <Image src={logo} alt="EnjoyStick logo" class="justify-center" />
+</div>
 
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
-![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
-![Vue.js](https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+<div class="[&_p]:justify-center [&_p]:flex [&_p]:flex-nowrap [&_img]:p-1">
+  [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+  ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
+  ![Vue.js](https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+</div>
 
 API REST em Laravel de uma loja virtual de controles e acessórios para jogos. Cobre a jornada completa de compra: catálogo público, carrinho de visitante, fusão do carrinho no login, checkout com baixa de estoque, pagamento simulado, acompanhamento de pedidos e uma área administrativa.
 
-> [!NOTE]
-> Projeto final do curso. O pagamento é **simulado**: nenhum dado de cartão é solicitado, trafegado ou armazenado.
+<div class="flex items-center">
+  <Icon name="feather:alert-circle" class="text-blue-400!"></Icon><p class="text-blue-400! my-0! ml-1">NOTA</p>
+</div>
+<div class="[&_blockquote]:mt-0! [&_p]:mt-0!">
+> O pagamento é **simulado**: nenhum dado de cartão é solicitado, trafegado ou armazenado.
+</div>
 
-> [!IMPORTANT]  
-> Um pouco de IA generativa foi utilizada para cumprir o prazo. Para saber mais detalhes de como foi usada durante o desenvolvimento, confira meu blog.
+<div class="flex items-center">
+  <Icon name="feather:alert-triangle" class="text-orange-400!"></Icon><p class="text-orange-400! my-0! ml-1">IMPORTANTE</p>
+</div>
+<div class="[&_blockquote]:mt-0! [&_p]:mt-0!">
+> Um pouco de IA generativa foi utilizada para cumprir o prazo. Para saber mais
+> detalhes de como foi usada durante o desenvolvimento, confira meu blog.
+</div>
 
 ## Tecnologias
 
@@ -206,53 +226,66 @@ Todas com o prefixo `/api`.
 
 ### Catálogo
 
-<div align="center">
-  <img src="/images/enjoystick/home.png" width="45%" />
-  <img src="/images/enjoystick/product.png" width="45%" />
+<div align="center" class="justify-center flex flex-nowrap">
+  <Image src={home} alt="Tela da home" class="justify-center w-[45%] p-1" />
+  <Image
+    src={product}
+    alt="Tela da detalhes de um produto"
+    class="justify-center w-[45%] p-1"
+  />
 </div>
 
 ### Carrinho
 
-<img align="center" src="/images/enjoystick/cart.png" />
+<img align="center" src="../../../assets/images/enjoystick/cart.png" />
 
 ### Login
 
-<img align="center" src="/images/enjoystick/login.png" />
+<img align="center" src="../../../assets/images/enjoystick/login.png" />
 
 ### Cadastro
 
-<img align="center" src="/images/enjoystick/register.png" />
+<img align="center" src="../../../assets/images/enjoystick/register.png" />
 
 ### Perfil
 
-<img align="center" src="/images/enjoystick/user_profile.png" />
+<img align="center" src="../../../assets/images/enjoystick/user_profile.png" />
 
 ### Pedido
 
-<img align="center" src="/images/enjoystick/user_order.png" />
+<img align="center" src="../../../assets/images/enjoystick/user_order.png" />
 
 ### Painéis de Admin
 
 #### Produtos
 
 <div align="center">
-  <img src="/images/enjoystick/adm_products.png" width="45%" />
-  <img src="/images/enjoystick/adm_create_product.png" width="45%" />
+  <img src="../../../assets/images/enjoystick/adm_products.png" width="45%" />
+  <img
+    src="../../../assets/images/enjoystick/adm_create_product.png"
+    width="45%"
+  />
 </div>
 #### Categorias
 
-<img align="center" src="/images/enjoystick/adm_categories.png" />
+<img
+  align="center"
+  src="../../../assets/images/enjoystick/adm_categories.png"
+/>
 
 #### Pedidos
 
 <div align="center">
-  <img src="/images/enjoystick/adm_orders.png" width="45%" />
-  <img src="/images/enjoystick/adm_edit_order.png" width="45%" />
+  <img src="../../../assets/images/enjoystick/adm_orders.png" width="45%" />
+  <img src="../../../assets/images/enjoystick/adm_edit_order.png" width="45%" />
 </div>
 
 ### Mobile
 
 <div align="center">
-  <img src="/images/enjoystick/login_mobile.png" width="45%" />
-  <img src="/images/enjoystick/login_mobile_tab.png" width="45%" />
+  <img src="../../../assets/images/enjoystick/login_mobile.png" width="45%" />
+  <img
+    src="../../../assets/images/enjoystick/login_mobile_tab.png"
+    width="45%"
+  />
 </div>
