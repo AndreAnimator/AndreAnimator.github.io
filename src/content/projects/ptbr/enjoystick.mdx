@@ -18,7 +18,7 @@ featured: true
 docs: "https://andreanimator.github.io/enjoystick-docs/"
 url: "https://enjoystick.onrender.com/"
 github: "https://github.com/AndreAnimator/enjoystick"
-image: "../../../assets/images/enjoystick/banner_app.png"
+image: "../../../assets/images/enjoystick/banner.png"
 title: EnjoyStick
 description: "E-Commerce de controles de vídeo-game e controles modificados para acessibilidade"
 ---
@@ -27,6 +27,21 @@ import { Image } from "astro:assets";
 import logo from "../../../assets/images/enjoystick/LOGO BANNER.png";
 import home from "../../../assets/images/enjoystick/home.png";
 import product from "../../../assets/images/enjoystick/product.png";
+import admCategories from "../../../assets/images/enjoystick/adm_categories.png";
+import admCreateProduct from "../../../assets/images/enjoystick/adm_create_product.png";
+import admOrders from "../../../assets/images/enjoystick/adm_orders.png";
+import admEditOrder from "../../../assets/images/enjoystick/adm_edit_order.png";
+import admProducts from "../../../assets/images/enjoystick/adm_products.png";
+import app from "../../../assets/images/enjoystick/app.png";
+import banner from "../../../assets/images/enjoystick/banner.png";
+import cart from "../../../assets/images/enjoystick/cart.png";
+import loginMobileTab from "../../../assets/images/enjoystick/login_mobile_tab.png";
+import loginMobile from "../../../assets/images/enjoystick/login_mobile.png";
+import login from "../../../assets/images/enjoystick/login.png";
+import register from "../../../assets/images/enjoystick/register.png";
+import userOrder from "../../../assets/images/enjoystick/user_order.png";
+import userProfile from "../../../assets/images/enjoystick/user_profile.png";
+
 import { Icon } from "astro-icon/components";
 
 # Enjoystick: API da loja virtual
@@ -44,7 +59,7 @@ import { Icon } from "astro-icon/components";
 API REST em Laravel de uma loja virtual de controles e acessórios para jogos. Cobre a jornada completa de compra: catálogo público, carrinho de visitante, fusão do carrinho no login, checkout com baixa de estoque, pagamento simulado, acompanhamento de pedidos e uma área administrativa.
 
 <div class="bg-indigo-800!">
-  <div class="flex items-center ml-7">
+  <div class="flex items-center pl-7 border-l-4 border-blue-400 font-bold">
     <Icon name="feather:alert-circle" class="text-blue-200!"></Icon><p class="my-0! ml-1 text-blue-200!">NOTA</p>
   </div>
   <div class="[&_blockquote]:mt-0! [&_p]:mt-0! [&_p]:text-indigo-50! [&_blockquote]:border-blue-400!">
@@ -53,7 +68,7 @@ API REST em Laravel de uma loja virtual de controles e acessórios para jogos. C
 </div>
 
 <div class="bg-orange-700!">
-  <div class="flex items-center ml-7">
+  <div class="flex items-center pl-7 border-l-4 border-orange-400 font-bold">
     <Icon name="feather:alert-octagon" class="text-orange-200!"></Icon><p class="my-0! ml-1 text-orange-200!">IMPORTANTE</p>
   </div>
   <div class="[&_blockquote]:mt-0! [&_p]:mt-0! [&_p]:text-amber-50! [&_blockquote]:border-orange-400!">
@@ -231,65 +246,97 @@ Todas com o prefixo `/api`.
 ### Catálogo
 
 <div align="center" class="justify-center flex flex-nowrap">
-  <Image src={home} alt="Tela da home" class="justify-center w-[45%] p-1" />
+  <Image
+    src={home}
+    alt="Tela da home"
+    class="justify-center w-[45%] p-1 h-full"
+  />
   <Image
     src={product}
     alt="Tela da detalhes de um produto"
-    class="justify-center w-[45%] p-1"
+    class="justify-center w-[45%] p-1 h-full"
   />
 </div>
 
 ### Carrinho
 
-<img align="center" src="../../../assets/images/enjoystick/cart.png" />
+<div align="center" class="justify-center">
+  <Image src={cart} alt="Tela do carrinho" class="justify-center" />
+</div>
 
 ### Login
 
-<img align="center" src="../../../assets/images/enjoystick/login.png" />
+<div align="center" class="justify-center">
+  <Image src={login} alt="Tela da home" class="justify-center" />
+</div>
 
 ### Cadastro
 
-<img align="center" src="../../../assets/images/enjoystick/register.png" />
+<div align="center" class="justify-center">
+  <Image src={register} alt="Tela da home" class="justify-center" />
+</div>
 
 ### Perfil
 
-<img align="center" src="../../../assets/images/enjoystick/user_profile.png" />
+<div align="center" class="justify-center">
+  <Image src={userProfile} alt="Tela da home" class="justify-center" />
+</div>
 
 ### Pedido
 
-<img align="center" src="../../../assets/images/enjoystick/user_order.png" />
+<div align="center" class="justify-center">
+  <Image src={userOrder} alt="Tela da home" class="justify-center" />
+</div>
 
 ### Painéis de Admin
 
 #### Produtos
 
-<div align="center">
-  <img src="../../../assets/images/enjoystick/adm_products.png" width="45%" />
-  <img
-    src="../../../assets/images/enjoystick/adm_create_product.png"
-    width="45%"
+<div align="center" class="justify-center flex flex-nowrap">
+  <Image
+    src={admProducts}
+    alt="Tela da home"
+    class="justify-center w-[45%] p-1 h-full"
+  />
+  <Image
+    src={admCreateProduct}
+    alt="Tela da detalhes de um produto"
+    class="justify-center w-[45%] p-1 h-full"
   />
 </div>
+
 #### Categorias
 
-<img
-  align="center"
-  src="../../../assets/images/enjoystick/adm_categories.png"
-/>
+<div align="center" class="justify-center">
+  <Image src={admCategories} alt="Tela da home" class="justify-center" />
+</div>
 
 #### Pedidos
 
-<div align="center">
-  <img src="../../../assets/images/enjoystick/adm_orders.png" width="45%" />
-  <img src="../../../assets/images/enjoystick/adm_edit_order.png" width="45%" />
+<div align="center" class="justify-center flex flex-nowrap">
+  <Image
+    src={admOrders}
+    alt="Tela da home"
+    class="justify-center w-[45%] p-1 h-full"
+  />
+  <Image
+    src={admEditOrder}
+    alt="Tela da detalhes de um produto"
+    class="justify-center w-[45%] p-1 h-full"
+  />
 </div>
 
 ### Mobile
 
-<div align="center">
-  <img src="../../../assets/images/enjoystick/login_mobile.png" width="45%" />
-  <img
-    src="../../../assets/images/enjoystick/login_mobile_tab.png"
-    width="45%"
+<div align="center" class="justify-center flex flex-nowrap">
+  <Image
+    src={loginMobile}
+    alt="Tela da home"
+    class="justify-center w-[45%] p-1 h-full"
+  />
+  <Image
+    src={loginMobileTab}
+    alt="Tela da detalhes de um produto"
+    class="justify-center w-[45%] p-1 h-full"
   />
 </div>
