@@ -10,15 +10,18 @@ export async function GET(context) {
     title: "Dre Coding Blog",
     description: "Learning everything computers related (or trying)",
     site: context.site,
-    items: blog.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.date,
-      link: `/en/blog/${post.id}`,
-      content: sanitizeHtml(parser.render(post.body), {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-      }),
-      ...post.data,
-    })),
+    items: blog.map((post) => {
+      const slug = post.id.split("/").slice(1).join("/");
+      return {
+        title: post.data.title,
+        pubDate: post.data.date,
+        link: `/en/blog/${slug}`,
+        content: sanitizeHtml(parser.render(post.body), {
+          allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+        }),
+        ...post.data,
+      };
+    }),
     customData: `<language>en-us</language>`,
   });
 }
