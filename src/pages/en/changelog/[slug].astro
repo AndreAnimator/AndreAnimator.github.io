@@ -8,7 +8,7 @@ import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 
 export const getStaticPaths = async () => {
-    const logss = await getCollection("logs");
+    const logss = await getCollection("logs", ({ id }) => id.startsWith("en/"));
     const paths = logss.map(log => {
         const [lang, ...slug] = log.id.split('/');
         return {
@@ -35,7 +35,7 @@ const {Content} = await render(log);
 <Layout title={log.data.title}>
     <Main>
         <H1 text={log.data.title}></H1>
-        <div class="prose prose-2xl overflow-visible relative mb-20">
+        <div class="prose prose-2xl dark:prose-invert overflow-visible relative mb-20">
             <Content/>
         </div>
     </Main>

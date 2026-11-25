@@ -1,0 +1,105 @@
+---
+author: andre-vitor
+categories: ["blog", "code-academy"]
+date: 25/11/2026
+featured: true
+image: "../../../assets/images/enjoystick/banner.png"
+title: Sobre o Enjoy Stick
+description: "Postagem descrevendo o processo de desenvolvimento do EnjoyStick"
+---
+
+import { Image } from "astro:assets";
+import diagramaClasses from "../../../assets/images/enjoystick-post/diagrama-classes.png";
+import diagramaClassesMVC from "../../../assets/images/enjoystick-post/diagrama-classes-mvc.png";
+import projetoLogicoRelacional from "../../../assets/images/enjoystick-post/projeto-logico-relacional.png";
+import modelagemSQL from "../../../assets/images/enjoystick-post/enjoy_stick_sql.png";
+
+## Introdução
+
+Em agosto de 2026 eu me inscrevi pro Code Academy, curso de programação avançada fornecido pelo instituto 3C. Passei na entrevista e comecei a estudar. O objetivo central do curso é fornecer preparo para se tornar um desenvolvedor full-stack, ensinando como usar tecnologias essenciais de desenvolvimento como Docker e Git, a programar em PHP e laravel, noções básicas do que é um CRUD, uma API-REST, noções de Bancos de Dados relacionais, programação orientada a objetos, MVSC e afins. Além de instruir os alunos a como adotar uma postura profissional em ambientes de trabalhos.
+
+Como projeto final para testar todas as habilidades adquiridas no curso, foi pedido para que se desenvolvesse um site de E-Commerce seguindo uma certa documentação onde estava descrita as regras de negócio e funcionalidades que deve ter no sistema. O tema era de livre escolha.
+
+## Tema
+
+Para me poupar um pouquinho de tempo, eu resolvi reaproveitar o que eu tinha feito no Projeto Integrador I na faculdade. Algumas telas já estavam feitas e a modelagem de banco de dados também, precisando só ajustar o que fosse desnecessário.
+
+O tema desse projeto era fazer um site de E-Commerce com foco em centralizar e facilitar o acesso de alternativas acessíveis de controles de video games, para que qualquer pessoa possa jogar independente da deficiência física portada.
+
+Logo mais entro em detalhes das mudanças que foram necessárias.
+
+Quem deu o nome de EnjoyStick pro projeto foi o meu colega que fazia parte do Projeto Integrador I, Pedro Lorenzetti, e grande parte da modelagem foi o Gabriel Dibs quem fez.
+
+Se alguém quiser, tem o documento inteiro pra baixar [aqui](/integras.docx.pdf).
+
+## Regras de negócio
+
+As regras de negócio que foram exigidas foram as seguintes:
+
+## Modelagem, migration, seeders
+
+### Modelagem
+
+Como eu já comentei na introdução, eu reutilizei o que tinha sido feito no Projeto Integrador para fazer a modelagem do Banco de Dados.
+
+### Para visualizar um pouco o que já tinha sido feito:
+
+#### Diagrama de classes reduzido da arquitetura MVC:
+
+<div align="center" class="justify-center">
+  <Image
+    src={diagramaClassesMVC}
+    alt="Diagrama de Classes reduzido da arquitetura MVC"
+    class="justify-center"
+  />
+</div>
+
+#### Diagrama de classes
+
+<div align="center" class="justify-center">
+  <Image
+    src={diagramaClasses}
+    alt="Diagrama de Classes do Projeto Integrador"
+    class="justify-center"
+  />
+</div>
+
+#### Projeto Lógico Relacional
+
+<div align="center" class="justify-center">
+  <Image
+    src={projetoLogicoRelacional}
+    alt="Projeto lógico relacional do Projeto Integrador"
+    class="justify-center"
+  />
+</div>
+
+Mas lendo os requisitos, percebi que algumas alterações eram necessárias e fiquei com a seguinte modelagem para o projeto final:
+
+<div align="center" class="justify-center">
+  <Image
+    src={modelagemSQL}
+    alt="Modelagem de banco de dados final pro Projeto"
+    class="justify-center"
+  />
+</div>
+
+Essa imagem foi feita com o mysql WorkBench. Eu tentei usar o dbdesigner mas ele deixou a desejar em alguns quesitos, como tipos de dados não suportados. Era bem incompleto. Acho que tentei usar outro site, mas não lembro qual era kkkkk...
+
+### Migrations
+
+Durante o curso do Code Academy nós tivemos uma atividade chamada Work Days. Nela, foram formados dois grupos pra desenvolver o Projeto Final durante três dias. Cada grupo tinha um aluno que foi atribuído o cargo de Tech Lead, ele organizava as tarefas que cada membro da equipe devia fazer. Eu fui um deles. Obviamente foi tudo feito com IA pra poder dar tempo de fazer a atividade.
+
+O projeto que precisamos desenvolver foi o próprio Projeto Final, já que estava bem documentado. Foi pedido somente para não utilizar nenhum framework, ou seja: sem VUE ou semelhantes pro Front e sem Laravel, só PHP pro Back. Também foi pedido para que não tenha mesclagem do carrinho, uma das regras de negócio do projeto final. No fim, saímos da atividade com uma versão em pequena escala do projeto final.
+
+Já que eu já tinha a modelagem teoricamente pronta, eu só reaproveitei as migrations dessa atividade e alterei para seguir a modelagem atual.
+
+Pontos de destaque que foram cobrados durante a apresentação final:
+
+## Models, Responses, Requests
+
+## Services, Controllers, Routes
+
+## Front-End
+
+## Hospedagem

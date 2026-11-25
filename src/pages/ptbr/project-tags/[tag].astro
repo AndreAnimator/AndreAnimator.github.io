@@ -8,7 +8,9 @@ import Main from '../../../components/Main.astro';
 import { getLangFromUrl, useTranslations } from '../../../i18n/utils'
 
 export const getStaticPaths = async () => {
-    const allProjects = await getCollection("projects");
+    const allProjects = await getCollection("projects", ({ id }) => {
+        return id.startsWith('ptbr');
+    });
     /*
     console.log("AStro url")
     console.log(Astro.url.pathname)
@@ -24,7 +26,7 @@ export const getStaticPaths = async () => {
     })
 
     return Array.from(allTags).map((tag) => {
-        const filteredPosts = allProjects.filter((post) => post.data.categories.includes(tag))
+        const filteredPosts = allProjects.filter((post) => post.data.categories.includes(String(tag)))
         return {
         params: { tag },
         props: {
@@ -36,19 +38,11 @@ export const getStaticPaths = async () => {
 
 const { tag } = Astro.params;
 const { projects } = Astro.props;
-
-const lang = getLangFromUrl(Astro.url);
-const tagposts = await getCollection("projects", ({ id }) => {
-        return id.startsWith(lang);
-    });
-console.log(tagposts)
 ---
 
 <Layout title={tag as string}>
     <Main>
         <H1 text=`projetos com a tag ${tag}`/>
-        {tagposts.map(project => (
-            <ProjectList projects={tagposts}/>
-        ))}
+        <ProjectList projects={projects}/>
     </Main>
 </Layout>

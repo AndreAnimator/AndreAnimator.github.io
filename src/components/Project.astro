@@ -27,7 +27,7 @@ const [lang, ...slug] = project.id.split('/');
     >
         <h2>{project.data.title}</h2>
     </a>
-    <div class="tags flex">
+    <div class="tags flex flex-wrap">
         {project.data.categories.map((tag: string) => (
         <p class="mt-2 mb-2"><a href={`/${lang}/project-tags/${tag}`} class="overflow-hidden whitespace-nowrap text-ellipsis tag m-2 rounded-2xl  bg-amber-600 dark:bg-emerald-500 h-9 px-2 py-1 text-gray-50">{tag}</a></p>
         ))}
@@ -38,6 +38,6 @@ const [lang, ...slug] = project.id.split('/');
         <a class="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-shadow-amber-800 dark:hover:text-emerald-800 font-semibold inline-block" href={`${project.data.github}`}> GITHUB </a>
     </div>
     <p class="text-zinc-500 text-2xl line-clamp-2">
-        {project.body}
+        {project.data.description}
     </p>
 </article>
