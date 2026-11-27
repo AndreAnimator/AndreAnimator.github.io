@@ -34,7 +34,21 @@ Se alguém quiser, tem o documento inteiro pra baixar [aqui](/integras.docx.pdf)
 
 ## Regras de negócio
 
-As regras de negócio que foram exigidas foram as seguintes:
+Não vou descrever todas, mas as princípais regras de negócio que foram exigidas foram as seguintes:
+
+- O usuário autenticado só pode ter um carrinho.
+- Quando um produto já estiver no carrinho, se adicioná-lo novamente a quantidade soma.
+- A quantidade do produto num pedido ou carrinho não pode ultrapassar o estoque.
+- Pedidos congelam o preço.
+- Ao fazer login ou cadastro, se o front-end mandar um carrinho de visitante, ele deve fundir com o carrinho dessa conta.
+- Produto presente só no carrinho de visitante deve ser adicionado. E se já tiver no carrinho do usuário, a quantidade deve ser somada.
+- O usuário deve ser avisado se a quantidade máxima for excedida durante a fusão.
+- O cálculo de total deve ser feito no servidor.
+- A criação de um pedido decrementa a quantidade no estoque, isso deve ser feito numa transação que retorna a quantidade ao normal se falhar.
+- Se o pedido for cancelado, a quantidade volta ao estoque.
+- Existe ordem para o status do pedido: aguardando pagamento → pago → enviado → entregue; e cancelado a partir de aguardando pagamento.
+- Não deve usar ponto flutuando pro calculo de preços. Sempre usar decimal (10, 1).
+- O produto que já pertencer a um pedido não pode ser excluído, usa-se apenas exclusão lógica nesse caso. (mais pra frente você vai ver que eu usei exclusão lógica pra tudo não só pra quando o produto tiver num pedido)
 
 ## Modelagem, migration, seeders
 
@@ -95,6 +109,22 @@ O projeto que precisamos desenvolver foi o próprio Projeto Final, já que estav
 Já que eu já tinha a modelagem teoricamente pronta, eu só reaproveitei as migrations dessa atividade e alterei para seguir a modelagem atual.
 
 Pontos de destaque que foram cobrados durante a apresentação final:
+
+- O que é constrained?
+  Constrained é o que impede que um dado invalido seja preenchido naquele campo se não for da tabela desejada. Determina se vai ter alguma regra ou não pra quando algo acontecer com o dado. Na hora eu não soube responder kk...
+- Como que o index funciona?
+  Esse eu não soube justificar o uso além de dizer que facilita na ordenação pelo campo especificado, tipo: `$table->index('category_id');`. Nesse caso é facilitado a ordenação pela categoria que ele pertence.
+  Mas é meio por aí mesmo, ele torna mais rápido a consulta no banco de dados.
+
+Acho que foi só isso...
+
+Alguns outros pontos de destaque:
+
+- A única coisa que diferencia as migrations de usuárias das que já foram criadas por padrão pelo laravel é esse campo: `$table->enum('role', ['client', 'admin'])->default('client');`, que determina a role do usuário.
+- Nas migrations de Produtos, `$table->foreignId('category_id')->constrained()->restrictOnDelete();` é interessante pois impede que o produto seja excluído se tiver alguma categoria.
+- `$table->integer('stock')->default('0')->unsigned();` é interessante pelo `->unsigned()` que faz com que o valor nunca seja negativo.
+
+### Seeder
 
 ## Models, Responses, Requests
 
